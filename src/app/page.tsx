@@ -16,8 +16,15 @@ const page = () => {
       <h2 className='text-gray-300 text-3xl'>All your favorites, in one place!</h2>
     </div>
     <div>
-      <button className='ml-20 px-3 py-3 mt-2 text-white bg-purple-700 rounded-md hover:bg-black transition-all'>Get Started</button>
+      <button className='ml-20 px-3 py-3 mt-2 text-white bg-purple-700 rounded-md hover:bg-black transition-all'>Learn More</button>
     </div>
+
+    <section id='learn-more'>
+      <div className='h-60 mt-96'>
+        hello
+      </div>
+
+    </section>
     </main>
 
   )
