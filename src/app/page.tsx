@@ -2,6 +2,7 @@ import React from 'react'
 import bg from "../assets/bg.jpg"
 import Image from 'next/image'
 import "./home.css"
+import Link from 'next/link'
 
 const page = () => {
   return (
@@ -16,15 +17,10 @@ const page = () => {
       <h2 className='text-gray-300 text-3xl'>All your favorites, in one place!</h2>
     </div>
     <div>
+      <Link href="/about">
       <button className='ml-20 px-3 py-3 mt-2 text-white bg-purple-700 rounded-md hover:bg-black transition-all'>Learn More</button>
+      </Link>
     </div>
-
-    <section id='learn-more'>
-      <div className='h-60 mt-96'>
-        hello
-      </div>
-
-    </section>
     </main>
 
   )
