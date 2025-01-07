@@ -1,6 +1,6 @@
 import React from 'react'
 import Image from 'next/image'
-import bg from "../../assets/anime.jpg"
+import bg from "../../assets/anime.png"
 
 const anime = () => {
   return (
