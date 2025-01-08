@@ -37,9 +37,9 @@ const Form: React.FC = () => {
       };
     
       return (
-        <div className="min-h-screen flex items-center justify-center bg-gray-100">
+        <div className="min-h-screen flex items-center justify-center">
           <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-            <h1 className="text-2xl font-bold mb-6 text-center">Contact Us</h1>
+            <h1 className="text-2xl text-black font-bold mb-6 text-center">Games List</h1>
             <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium text-gray-700">
@@ -62,9 +62,9 @@ const Form: React.FC = () => {
                   Rating
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
+                  type="number"
+                  id="rating"
+                  name="rating"
                   value={formData.rating}
                   onChange={handleChange}
                   className={`mt-1 block w-full px-4 py-2 border ${
@@ -77,7 +77,7 @@ const Form: React.FC = () => {
                 <label htmlFor="message" className="block text-sm font-medium text-gray-700">
                  status
                 </label>
-                <textarea
+                <input
                   id="message"
                   name="message"
                   value={formData.status}
@@ -85,7 +85,6 @@ const Form: React.FC = () => {
                   className={`mt-1 block w-full px-4 py-2 border ${
                     errors.status ? "border-red-500" : "border-gray-300"
                   } rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500`}
-                  rows={4}
                 />
                 {errors.status && <p className="text-red-500 text-sm mt-1">{errors.status}</p>}
               </div>
