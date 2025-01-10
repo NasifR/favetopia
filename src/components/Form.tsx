@@ -12,3 +12,10 @@ interface FormData {
     cover: string;
 }
 
+const Form: React.FC<FormProps> = ({ onClose, onSubmit }) => {
+    const [formData, setFormData] = useState<FormData>({
+        title: "",
+        rating: "",
+        status: "Active",
+        cover: "",
+    });
