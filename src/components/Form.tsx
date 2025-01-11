@@ -38,3 +38,27 @@ const Form: React.FC<FormProps> = ({ onClose, onSubmit }) => {
         onSubmit(formData);
         onClose();
     };
+
+    return (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
+            <div className="bg-white rounded-lg shadow-lg w-96 p-6">
+                <h2 className="text-xl font-bold mb-4 text-center">Add New Item</h2>
+                <form onSubmit={handleSubmit} className="space-y-4">
+          {/* Title Field */}
+                <div>
+                    <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+                    Title
+                    </label>
+                <input
+                    type="text"
+                    id="title"
+                    name="title"
+                    value={formData.title}
+                    onChange={handleChange}
+                    required
+                    className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                    />
+                </div>
+                    </div>
+                </div>
+    )
