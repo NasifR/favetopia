@@ -59,6 +59,24 @@ const Form: React.FC<FormProps> = ({ onClose, onSubmit }) => {
                     className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
                     />
                 </div>
+
+                <div>
+                    <label htmlFor="rating" className="block text-sm font-medium text-gray-700">
+                    Rating (0-10)
+                    </label>
+                    <input
+                        type="number"
+                        id="rating"
+                        name="rating"
+                        value={formData.rating}
+                        onChange={handleChange}
+                        step="0.1"
+                        min="0"
+                        max="10"
+                        className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+                        />    
                     </div>
+
+                    
                 </div>
     )
