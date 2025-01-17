@@ -47,9 +47,8 @@ const Form: React.FC<FormProps> = ({ onClose, onSubmit }) => {
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50">
       <div className="bg-white rounded-lg shadow-lg w-96 p-6">
-        <h2 className="text-xl font-bold mb-4 text-center">Add New Item</h2>
+        <h2 className="text-xl font-bold mb-4 text-center text-gray-900">Add New Item</h2>
         <form onSubmit={handleSubmit} className="space-y-4">
-          {/* Title Field */}
           <div>
             <label
               htmlFor="title"
@@ -64,7 +63,7 @@ const Form: React.FC<FormProps> = ({ onClose, onSubmit }) => {
               value={formData.title}
               onChange={handleChange}
               required
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block text-gray-600 w-full px-4 py-2 border border-gray-400 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
 
@@ -84,11 +83,10 @@ const Form: React.FC<FormProps> = ({ onClose, onSubmit }) => {
               step="0.1"
               min="0"
               max="10"
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block text-gray-600 w-full px-4 py-2 border border-gray-400 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
 
-          {/* Status Field */}
           <div>
             <label
               htmlFor="status"
@@ -101,7 +99,7 @@ const Form: React.FC<FormProps> = ({ onClose, onSubmit }) => {
               name="status"
               value={formData.status}
               onChange={handleChange}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full text-gray-600 px-4 py-2 border border-gray-400 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
             >
               <option value="Planned">Planned</option>
               <option value="Active">Active</option>
@@ -110,7 +108,6 @@ const Form: React.FC<FormProps> = ({ onClose, onSubmit }) => {
             </select>
           </div>
 
-          {/* Cover Field */}
           <div>
             <label
               htmlFor="cover"
@@ -124,7 +121,7 @@ const Form: React.FC<FormProps> = ({ onClose, onSubmit }) => {
               name="cover"
               value={formData.cover}
               onChange={handleChange}
-              className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
+              className="mt-1 block w-full px-4 py-2 border border-gray-400 rounded-md shadow-sm focus:ring-indigo-500 focus:border-indigo-500"
             />
           </div>
           {/* Buttons */}
