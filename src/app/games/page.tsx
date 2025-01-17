@@ -2,7 +2,7 @@
 import React from 'react'
 import Image from 'next/image'
 import bg from "../../assets/games.jpg"
-import ModalForm from '@/components/Form';
+import Form from '@/components/Form';
 import { useState } from "react";
 
 const games = () => {
@@ -30,7 +30,7 @@ const games = () => {
       </button>
 
       {isModalOpen && (
-        <ModalForm onClose={handleCloseModal} onSubmit={handleFormSubmit} />
+        <Form onClose={handleCloseModal} onSubmit={handleFormSubmit} />
       )}
     </main>
   )
