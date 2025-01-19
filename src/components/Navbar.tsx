@@ -1,7 +1,11 @@
+"use client";
 import React from "react";
 import Link from "next/link";
+import { useAuthState } from "react-firebase-hooks/auth";
+import { auth } from "../../lib/firebaseConfig";
 
 const Navbar = () => {
+  const [user] = useAuthState(auth);
   return (
     <>
       <div className="w-full h-16 bg-purple-700 sticky top-0">
@@ -40,6 +44,25 @@ const Navbar = () => {
                 </Link>
               </li>
             </ul>
+
+          
+          <div className="text-white">
+            {user ? (
+              <button
+                onClick={() => auth.signOut()}
+                className="hover:text-purple-700 hover:bg-white transition-all py-1 px-4 rounded-md"
+              >
+                Logout
+              </button>
+            ) : (
+              <Link href="/signup">
+                <button className="hover:text-purple-700 hover:bg-white transition-all py-1 px-4 rounded-md">
+                  Login
+                </button>
+              </Link>
+            )}
+          </div>
+
           </div>
         </div>
       </div>

@@ -1,7 +1,8 @@
+"use client"
 import React, { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../../../lib/firebaseConfig";
-import { useRouter } from "next/router";
+import { useRouter } from "next/navigation";
 
 const signup = () => {
   const [email, setEmail] = useState("");
