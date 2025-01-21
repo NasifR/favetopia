@@ -27,7 +27,7 @@ const login = () => {
         onSubmit={handleLogin}
         className="p-8 bg-white rounded shadow-md w-96"
       >
-        <h2 className="text-2xl font-bold mb-6">Log In</h2>
+        <h2 className="text-2xl font-bold text-gray-900 text-center mb-6">Log In</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
         <div className="mb-4">
           <label className="block text-gray-700 mb-2">Email</label>
