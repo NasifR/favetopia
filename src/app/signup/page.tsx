@@ -1,12 +1,13 @@
-"use client"
+"use client";
 import React, { useState } from "react";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../../../lib/firebaseConfig";
 import { useRouter } from "next/navigation";
 
-const signup = () => {
+const Signup = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [name, setName] = useState("");
   const [error, setError] = useState("");
   const router = useRouter();
 
@@ -14,12 +15,17 @@ const signup = () => {
     e.preventDefault();
     setError("");
     try {
-      await createUserWithEmailAndPassword(auth, email, password);
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+
+      // Update the user's profile with the name
+      await updateProfile(userCredential.user, { displayName: name });
+
       router.push("/");
     } catch (err: any) {
       setError(err.message);
     }
   };
+
   return (
     <div className="flex justify-center items-center min-h-screen bg-gray-100">
       <form
@@ -28,6 +34,18 @@ const signup = () => {
       >
         <h2 className="text-2xl font-bold mb-6 text-gray-900">Sign Up</h2>
         {error && <p className="text-red-500 mb-4">{error}</p>}
+
+        <div className="mb-4">
+          <label className="block text-gray-700 mb-2">Name</label>
+          <input
+            type="text"
+            placeholder="Your name"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            className="w-full p-2 border rounded"
+            required
+          />
+        </div>
         <div className="mb-4">
           <label className="block text-gray-700 mb-2">Email</label>
           <input
@@ -65,4 +83,4 @@ const signup = () => {
   );
 };
 
-export default signup;
+export default Signup;
