@@ -4,6 +4,7 @@ import Image from 'next/image'
 import bg from "../../assets/games.jpg"
 import Form from '@/components/Form';
 import { useState } from "react";
+import withAuth from '@/components/withAuth';
 
 const games = () => {
 
@@ -36,4 +37,4 @@ const games = () => {
   )
 }
 
-export default games
+export default withAuth(games);
