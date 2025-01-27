@@ -1,14 +1,17 @@
 import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_AUTH_DOMAIN",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_STORAGE_BUCKET",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID",
+  apiKey: "AIzaSyCHglVWjJMfBn_9UejllYQNtQpUP3Hw7RM",
+  authDomain: "favetopia.firebaseapp.com",
+  projectId: "favetopia",
+  storageBucket: "favetopia.firebasestorage.app",
+  messagingSenderId: "644345267065",
+  appId: "1:644345267065:web:cc15a84c78d1f63a9925a8",
+  measurementId: "G-EZ07P5SPET"
 };
 
 const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 export const auth = getAuth(app);
