@@ -1,6 +1,7 @@
 import React from 'react'
 import Image from 'next/image'
 import bg from "../../assets/shows.jpg"
+import withAuth from '@/components/withAuth';
 
 const shows = () => {
   return (
@@ -12,4 +13,4 @@ const shows = () => {
   )
 }
 
-export default shows
+export default withAuth(shows);

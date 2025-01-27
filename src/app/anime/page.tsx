@@ -4,6 +4,7 @@ import Image from 'next/image'
 import bg from "../../assets/anime.png"
 import Form from '@/components/Form';
 import { useState } from "react";
+import withAuth from '@/components/withAuth';
 const anime = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -35,4 +36,4 @@ const anime = () => {
   )
 }
 
-export default anime
+export default withAuth(anime);

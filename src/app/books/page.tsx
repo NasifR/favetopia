@@ -4,6 +4,7 @@ import Image from 'next/image'
 import bg from "../../assets/books.png"
 import Form from '@/components/Form';
 import { useState } from "react";
+import withAuth from '@/components/withAuth';
 
 const books = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -37,4 +38,4 @@ const books = () => {
   )
 }
 
-export default books
+export default withAuth(books);
