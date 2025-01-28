@@ -1,7 +1,8 @@
+"use client";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { onAuthStateChanged } from "firebase/auth";
-import { auth } from "../../lib/firebaseConfig"; // Your Firebase config path
+import { auth } from "../../lib/firebaseConfig"; 
 
 const withAuth = (WrappedComponent: React.ComponentType) => {
   return (props: any) => {
