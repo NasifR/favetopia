@@ -1,10 +1,9 @@
 "use client";
-
 import { useState } from "react";
 import Image from "next/image";
-import withAuth from "@/components/withAuth"; // Assuming withAuth is in the components folder
-import Form from "@/components/Form"; // Assuming Form is a reusable component
-import bg from "@/assets/shows.jpg"; // Replace with your actual background image
+import withAuth from "@/components/withAuth";
+import Form from "@/components/Form";
+import bg from "@/assets/shows.jpg"; 
 
 const shows = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
