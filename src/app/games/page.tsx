@@ -23,12 +23,14 @@ const games = () => {
     <div>
       <Image src={bg} alt="Cover Image" className="bg-img" width={1920} height={1080}  />
     </div>
-    <button
-        onClick={handleOpenModal}
-        className="px-4 py-2 bg-indigo-500 text-white rounded-md hover:bg-indigo-600"
-      >
-        Add New Item
-      </button>
+    <div className="flex justify-center">
+        <button
+          onClick={handleOpenModal}
+          className="mt-5 px-4 py-2 bg-white text-purple-600 rounded-md hover:bg-black hover:text-white transition-all"
+        >
+          Add New Item
+        </button>
+      </div>
 
       {isModalOpen && (
         <Form onClose={handleCloseModal} onSubmit={handleFormSubmit} />
