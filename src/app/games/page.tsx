@@ -10,7 +10,7 @@ import { getAuth } from "firebase/auth";
 const games = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [gamesList, setGamesList] = useState([]);
+  const [gamesList, setGamesList] = useState<any[]>([]); // type not specifically defined
   const [loading, setLoading] = useState(true);
   const auth = getAuth(); //firebase auth
 
