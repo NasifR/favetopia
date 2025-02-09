@@ -3,20 +3,38 @@ import React from 'react'
 import Image from 'next/image'
 import bg from "../../assets/games.jpg"
 import Form from '@/components/Form';
-import { useState } from "react";
+import { useState, useEffect} from "react";
 import withAuth from '@/components/withAuth';
+import { getAuth } from "firebase/auth";
 
 const games = () => {
 
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [gamesList, setGamesList] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const auth = getAuth(); //firebase auth
 
-  const handleOpenModal = () => setIsModalOpen(true);
-  const handleCloseModal = () => setIsModalOpen(false);
+  // fetching user items from API
+  useEffect(() => {
+    const fetchGames = async () => {
+      const user = auth.currentUser;
+      if (!user) return;
 
-  const handleFormSubmit = (formData: any) => {
-    console.log("Form submitted:", formData);
-    alert(`New item added:\nTitle: ${formData.title}\nRating: ${formData.rating}\nStatus: ${formData.status}\nCover: ${formData.cover}`);
-  };
+      try {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/games?userId=${user.uid}`);
+        if (!response.ok) throw new Error("Failed to fetch games");
+        const data = await response.json();
+        setGamesList(data);
+      } catch (error) {
+        console.error(error);
+      } finally {
+        setLoading(false);
+      }
+
+    };
+
+    fetchGames();
+  }, [auth.currentUser]);
 
   return (
     <main>
